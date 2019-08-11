@@ -8,7 +8,6 @@ class Event extends Component {
     super();
 
     this.state={
-      modalIsOpen: false
     };
   }
 
@@ -16,7 +15,7 @@ class Event extends Component {
 
   };
 
-  showDetails = (event) => {
+  showDetails = (value) => {
 
   }
 
@@ -24,8 +23,11 @@ class Event extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.showDetails()}
-      </div>
+        <ul className="event">
+          <h1>{events.name}</h1>
+          <p>{events.description}</p>
+          <button onClick={() => this.showDetails()}>Show Details</button>
+      </ul>
     );
   }
 };
