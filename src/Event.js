@@ -27,7 +27,8 @@ class Event extends Component {
           <h1>{events.name}</h1>
           <p>{events.description}</p>
           <button onClick={() => this.showDetails()}>Show Details</button>
-      </ul>
+        </ul>
+      </div>
     );
   }
 };
