@@ -11,7 +11,7 @@ module.exports.getAccessToken = async event => {
     '?client_id=' + meetupClientId +
     '&client_secret=' + meetupClientSecret +
     '&grant_type=authorization_code' +
-    '&redirect_uri=https://zaclinz.github.io/meetup/' +
+    '&redirect_uri=https://zaclinz.github.io/meetup' +
     '&code=' + event.pathParameters.code;
 
     const info = await axios.post(MEETUP_OAUTH_URL);
@@ -20,7 +20,7 @@ module.exports.getAccessToken = async event => {
       statusCode: 200,
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:8080"
+        "Access-Control-Allow-Origin": "*"
       },
       body: JSON.stringify({
         access_token: info.data.access_token,
