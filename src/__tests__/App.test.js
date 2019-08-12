@@ -14,5 +14,10 @@ describe('<App /> component', () => {
     const AppWrapper = shallow(<App />);
     expect(AppWrapper.find(CitySearch)).toHaveLength(1);
   });
+  test('render event details', () => {
+    const AppWrapper = shallow(<App />);
+    expect(AppWrapper.find(CitySearch)).toHaveLength(1);
+  });
+
 
 });
