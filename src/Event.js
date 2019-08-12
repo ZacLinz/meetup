@@ -12,6 +12,7 @@ class Event extends Component {
   }
 
   state = {
+    events:  [],
 
   };
 
@@ -23,11 +24,13 @@ class Event extends Component {
   render() {
     return (
       <div>
+      {this.state.events.map(event =>
         <ul className="event">
-          <h1>{events.name}</h1>
-          <p>{events.description}</p>
+          <h1>{event.name}</h1>
+          <p>{event.description}</p>
           <button onClick={() => this.showDetails()}>Show Details</button>
         </ul>
+      )}
       </div>
     );
   }
