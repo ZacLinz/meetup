@@ -4,15 +4,10 @@ import Modal from 'react-modal';
 
 
 class Event extends Component {
-  constructor(){
-    super();
-
-    this.state={
-    };
-  }
 
   state = {
     events:  [],
+    details: [],
 
   };
 
