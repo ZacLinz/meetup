@@ -21,6 +21,10 @@ describe('<NumberOfEvents /> component', () => {
     expect(NumberOfEventsWrapper.find('.numberEvents').prop('value')).toBe(query);
   })
 
+  test('default number of events should be 32', () => {
+    expect(NumberOfEventsWrapper.find('.numberEvents').prop('value')).toBe('32');
+  })
+
   test('handle text input change', () => {
     const numberEvents = { target: { value: '64'}};
     NumberOfEventsWrapper.find('.numberEvents').simulate('change', numberEvents);
