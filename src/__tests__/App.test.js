@@ -4,6 +4,7 @@ import App from '../App';
 import EventList from '../EventList';
 import Event from '../Event';
 import CitySearch from '../CitySearch';
+import NumberOfEvents from '../NumberOfEvents';
 
 describe('<App /> component', () => {
   test('render list of events', () => {
@@ -14,10 +15,10 @@ describe('<App /> component', () => {
     const AppWrapper = shallow(<App />);
     expect(AppWrapper.find(CitySearch)).toHaveLength(1);
   });
-  test('render event details', () => {
+  test('render NumberOfEvents', () => {
     const AppWrapper = shallow(<App />);
-    expect(AppWrapper.find(Event)).toHaveLength(1);
-  });
+    expect(AppWrapper.find(NumberOfEvents)).toHaveLength(1);
+  })
 
 
 });
