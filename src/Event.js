@@ -7,23 +7,22 @@ class Event extends Component {
   };
 
   showDetails = () => {
-    const {show} = this.state;
-    this.setState({
-      show: !show
-    })
+    this.setState(prevState => ({
+      show: !prevState.show
+    }))
   }
 
 
   render() {
 
     const {event} = this.props;
-    const {show} = this.state;
 
     return (
-      <div className="event">
+      <div className="Event">
         <div className="eventName">{event.name}</div>
-          <button className="detailBtn" onClick={this.showDetails}>Show Details</button>
-        {show && (
+          <p className="time">{event.local_time} on {event.local_date}</p>
+
+        {this.state.show && (
           <div className="details">
             <div className="eventCity">{event.venue.city}</div>
             <div className="eventCountry">{event.venue.localized_country_name}</div>
@@ -32,6 +31,7 @@ class Event extends Component {
             <div className="eventDescription">{event.description}</div>
       </div>
     )}
+      <button className="detailBtn" onClick={this.showDetails}>Show/hide Details</button>
     </div>
   )
 }

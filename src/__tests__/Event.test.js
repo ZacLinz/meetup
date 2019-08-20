@@ -48,7 +48,7 @@ describe('<Event /> component', () => {
     })
 
     test('check to see if event is rendered', () => {
-      expect(EventWrapper.find('.event')).toHaveLength(1);
+      expect(EventWrapper.find('.Event')).toHaveLength(1);
     })
 
     test('event title should match', () =>{
@@ -56,11 +56,11 @@ describe('<Event /> component', () => {
     })
 
     test('click event should toggle details', () => {
-      EventWrapper.find('.event .detailBtn').simulate('click');
+      EventWrapper.find('.Event .detailBtn').simulate('click');
       expect(EventWrapper.state('show')).toBe(true);
       expect(EventWrapper.find('.details')).toHaveLength(1);
 
-      EventWrapper.find('.event .detailBtn').simulate('click');
+      EventWrapper.find('.Event .detailBtn').simulate('click');
       expect(EventWrapper.state('show')).toBe(false);
       expect(EventWrapper.find('.details')).toHaveLength(0);
 
