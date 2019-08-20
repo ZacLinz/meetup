@@ -24,8 +24,6 @@ class Event extends Component {
 
         {this.state.show && (
           <div className="details">
-            <div className="eventCity">{event.venue.city}</div>
-            <div className="eventCountry">{event.venue.localized_country_name}</div>
             <div className="eventGroup">{event.group.name}</div>
             <div className="eventLocation">{event.venue.address_1}</div>
             <div className="eventDescription">{event.description}</div>
