@@ -31,7 +31,6 @@ class Event extends Component {
     )}
       <button className="detailBtn"
       onClick={this.showDetails}
-      disabled={!event.venue.address_1 || !event.description || event.group.name}
       >Show/hide Details</button>
     </div>
   )
