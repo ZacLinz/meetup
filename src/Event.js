@@ -20,16 +20,18 @@ class Event extends Component {
     return (
       <div className="Event">
         <div className="eventName">{event.name}</div>
-          <p className="time">{event.local_time} on {event.local_date}</p>
-          <p className="rsvp">{event.yes_rsvp_count} people are going</p>
-        {this.state.show && (
+        <div className="eventGroup">{event.group.name}</div>
+        <p className="time">{event.local_time} on {event.local_date}</p>
+        <p className="rsvp">{event.yes_rsvp_count} people are going</p>
+        {this.state.show &&
           <div className="details">
-            <div className="eventGroup">{event.group.name}</div>
-            <div className="eventLocation">{event.venue.address_1}</div>
+            {event.venue && event.venue.name && (
+              <div className="eventLocation">{event.venue.city + ', ' + event.venue.address_1}</div>
+            )}
             <div className="description" dangerouslySetInnerHTML={{__html: event.description}} />
             <a className="link" href={event.link}>Event link</a>
-      </div>
-    )}
+          </div>
+    }
       <button className="detailBtn"
       onClick={this.showDetails}
       >Show/hide Details</button>
