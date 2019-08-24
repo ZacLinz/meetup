@@ -5,7 +5,7 @@ import CitySearch from './CitySearch';
 
 class NumberOfEvents extends Component {
   state = {
-    query: 32
+    query: 32,
   };
 
   handleInputChanged = (event) => {
@@ -17,10 +17,11 @@ class NumberOfEvents extends Component {
   render() {
     return (
       <div className="numberOfEvents">
-        <input type="number"
+        <input
+          type="number"
           className="numberEvents"
-          value={this.state.query}
           onChange={this.handleInputChanged}
+          value={this.state.query}
         />
         <span> Events </span>
       </div>
