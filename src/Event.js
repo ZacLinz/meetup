@@ -21,12 +21,13 @@ class Event extends Component {
       <div className="Event">
         <div className="eventName">{event.name}</div>
           <p className="time">{event.local_time} on {event.local_date}</p>
-
+          <p className="rsvp">{event.yes_rsvp_count} people are going</p>
         {this.state.show && (
           <div className="details">
             <div className="eventGroup">{event.group.name}</div>
             <div className="eventLocation">{event.venue.address_1}</div>
-            <div className="eventDescription">{event.description}</div>
+            <div className="description" dangerouslySetInnerHTML={{__html: event.description}} />
+            <a className="link" href={event.link}>Event link</a>
       </div>
     )}
       <button className="detailBtn"

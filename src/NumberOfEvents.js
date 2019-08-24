@@ -5,7 +5,7 @@ import CitySearch from './CitySearch';
 
 class NumberOfEvents extends Component {
   state = {
-    query: '32'
+    query: 32
   };
 
   handleInputChanged = (event) => {
