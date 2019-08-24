@@ -10,8 +10,6 @@ import { getEvents } from './api';
 class App extends Component{
   state = {
     events: [],
-    lat: null,
-    lon: null,
     page: null,
   }
 
