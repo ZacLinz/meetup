@@ -29,6 +29,7 @@ class Event extends Component {
               <div className="eventLocation">{event.venue.city + ', ' + event.venue.address_1}</div>
             )}
             <div className="description" dangerouslySetInnerHTML={{__html: event.description}} />
+            <p className="visibility">{event.visibility}</p>
             <a className="link" href={event.link}>Event link</a>
           </div>
     }
