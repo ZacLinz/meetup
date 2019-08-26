@@ -9,6 +9,7 @@ const mockEvents = {
     zip: 'S7H 0A1',
     member_count: 1270
   },
+
   events: [
     {
       created: 1557256846000,
