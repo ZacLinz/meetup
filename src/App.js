@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import EventList from './EventList';
-import Event from './Event';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
-import { mockEvents } from './mock-events';
 import { getEvents } from './api';
 
 class App extends Component{

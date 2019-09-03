@@ -5,13 +5,15 @@ class EventList extends Component {
 
   render() {
     return (
-      <ul className="EventList">
+      <div className="d-flex justify-content-center">
+      <ul className="EventList ">
         {this.props.events.map(event =>
           <li key={event.id}>
             <Event event={event}/>
           </li>
         )}
       </ul>
+      </div>
     );
   }
 }

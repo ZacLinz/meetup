@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import EventList from './EventList';
-import Event from './Event';
-import CitySearch from './CitySearch';
 
 class NumberOfEvents extends Component {
   state = {

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 class Event extends Component {
 
@@ -18,24 +20,26 @@ class Event extends Component {
     const event = this.props.event;
 
     return (
-      <div className="Event">
-        <div className="eventName">{event.name}</div>
+      <div className= "d-flex justify-content-center">
+      <Card className="Event" style= {{ width: "25rem"}}>
+        <Card.Title className="eventName">{event.name}</Card.Title>
 
-        <p className="time">{event.local_time} on {event.local_date}</p>
-        <p className="rsvp">{event.yes_rsvp_count} people are going</p>
+        <Card.Text className="time">{event.local_time} on {event.local_date}</Card.Text>
+        <Card.Text className="rsvp">{event.yes_rsvp_count} people are going</Card.Text>
         {this.state.show &&
           <div className="details">
             {event.venue && (
-              <div className="eventLocation">{event.venue.city + ', ' + event.venue.address_1}</div>
+              <Card.Text className="eventLocation">{event.venue.city + ', ' + event.venue.address_1}</Card.Text>
             )}
-            <div className="description" dangerouslySetInnerHTML={{__html: event.description}} />
-            <p className="visibility">{event.visibility}</p>
+            <Card.Text className="description" dangerouslySetInnerHTML={{__html: event.description}} />
+            <Card.Text className="visibility">{event.visibility}</Card.Text>
             <a className="link" href={event.link}>Event link</a>
           </div>
     }
-      <button className="detailBtn"
+      <Button className="detailBtn"
       onClick={this.showDetails}
-      >Show/hide Details</button>
+      >Show/hide Details</Button>
+    </Card>
     </div>
   )
 }
