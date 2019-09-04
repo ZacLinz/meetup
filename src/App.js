@@ -4,6 +4,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents } from './api';
+import logo from './images/CityEvents.png'
 
 class App extends Component{
   state = {
@@ -34,6 +35,7 @@ class App extends Component{
   render(){
   return (
     <div className="App">
+      <img className="logo" src={logo} alt="logo" />
       <CitySearch updateEvents={this.updateEvents} />
       <NumberOfEvents updateEvents={this.updateEvents} />
       <EventList events={this.state.events} />
