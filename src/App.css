@@ -4,6 +4,10 @@
   background-color: #D3D3D3;
 }
 
+body{
+    background-color: #D3D3D3;
+}
+
 .App * {
   box-sizing: border-box;
 }
