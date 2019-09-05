@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ErrorAlert } from './Alert'
 
 class NumberOfEvents extends Component {
   state = {
@@ -9,6 +10,16 @@ class NumberOfEvents extends Component {
     const value = event.target.value;
     this.setState({ query: value });
     this.props.updateEvents(null, null, value);
+
+    if (value < 1){
+      this.setState({ errorText: 'The number of events shown must be 1 or more',
+      })
+    }
+    else{
+      this.props.updateEvents(null, null, value);
+      this.setState({ errorText: ''})
+    }
+
   }
 
   render() {
@@ -21,6 +32,7 @@ class NumberOfEvents extends Component {
           value={this.state.query}
         />
         <span> Events </span>
+        <ErrorAlert text={this.state.errorText} />
       </div>
     )
   }
