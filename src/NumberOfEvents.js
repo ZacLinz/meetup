@@ -9,7 +9,6 @@ class NumberOfEvents extends Component {
   handleInputChanged = (event) => {
     const value = event.target.value;
     this.setState({ query: value });
-    this.props.updateEvents(null, null, value);
 
     if (value < 1){
       this.setState({ errorText: 'The number of events shown must be 1 or more',
