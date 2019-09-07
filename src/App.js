@@ -3,6 +3,7 @@ import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
+import { WarningAlert } from './Alert'
 import { getEvents } from './api';
 import logo from './images/CityEvents.png'
 
@@ -17,6 +18,12 @@ class App extends Component{
   }
 
   updateEvents = (lat, lon, page) => {
+    if (!navigator.onLine){
+      this.setState({ warningText: "You are offline. Events displayed are loaded from your last session."});
+    } else {
+      this.setState({ warningText: ""})
+    }
+
     if (lat && lon) {
       getEvents(lat, lon, this.state.page).then(events =>
         this.setState({ events, lat, lon })
@@ -38,6 +45,7 @@ class App extends Component{
       <img className="logo" src={logo} alt="logo" />
       <CitySearch updateEvents={this.updateEvents} />
       <NumberOfEvents updateEvents={this.updateEvents} />
+      <WarningAlert text={this.state.warningText} />
       <EventList events={this.state.events} />
 
 
