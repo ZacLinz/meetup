@@ -90,6 +90,7 @@ async function getEvents(lat, lon, page) {
   if (window.location.href.startsWith('http://localhost')) {
     return mockEvents.events;
   }
+  
   if (!navigator.onLine) {
     const events = localStorage.getItem('lastEvents');
     return JSON.parse(events);
