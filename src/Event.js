@@ -21,7 +21,7 @@ class Event extends Component {
 
     return (
       <div className= "d-flex justify-content-center">
-      <Card className="Event" style= {{ width: "25rem"}}>
+      <Card className="Event">
         <Card.Title className="eventName">{event.name}</Card.Title>
 
         <Card.Text className="time">{event.local_time} on {event.local_date}</Card.Text>
